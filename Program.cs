@@ -33,6 +33,24 @@ void PrintArray(int[] arr)
 // }
 
 // Task 2
+// void arr123(){
+//     int[] arr = new int[123];
+//     for(int i = 0; i < arr.Length; i++)
+//     {
+//         arr[i] = new Random().Next(1, 1000);
+//     }
+//     Console.WriteLine("массив: ");
+//     PrintArray(arr);
+//     int count = 0;
+//     for(int i = 0; i < arr.Length; i++){
+//         if(arr[i] > 9 && arr[i] < 100){
+//             count++;
+//         }
+//     }
+//     Console.WriteLine($"{count}");
+// }
+
+// Task 3
 // void findSum(int length){
 //     int[] arr = new int[length];
 //     FillArrayRandomNumbers(arr);
@@ -47,26 +65,42 @@ void PrintArray(int[] arr)
 //     Console.WriteLine($"{sum}");
 // }
 
-// Task 3
-void minAndMax(int length){
+// Task 4
+// void minAndMax(int length){
+//     int[] arr = new int[length];
+//     FillArrayRandomNumbers(arr);
+//     Console.WriteLine("массив: ");
+//     PrintArray(arr);
+
+//     int difference = 0;
+//     int max = Int32.MinValue;
+//     int min = Int32.MaxValue;
+//     for(int i =0; i < arr.Length; i++){
+//         if(arr[i] > max){
+//             max = arr[i];
+//         }
+//         if(arr[i] < min){
+//             min = arr[i];
+//         }
+//     }
+//     difference = max - min;
+//     Console.WriteLine($"{difference}");
+// }
+
+// Task 5
+void pairs(int length){
     int[] arr = new int[length];
     FillArrayRandomNumbers(arr);
     Console.WriteLine("массив: ");
     PrintArray(arr);
 
-    int difference = 0;
-    int max = Int32.MinValue;
-    int min = Int32.MaxValue;
-    for(int i =0; i < arr.Length; i++){
-        if(arr[i] > max){
-            max = arr[i];
-        }
-        if(arr[i] < min){
-            min = arr[i];
+    for(int i = 0, j = arr.Length - 1; i <= j; i++, j-- ){
+        if(i == j){
+            Console.Write($"{arr[i]} ");    
+        }else{
+            Console.Write($"{arr[i] * arr[j]} ");
         }
     }
-    difference = max - min;
-    Console.WriteLine($"{difference}");
 }
 
 
@@ -77,7 +111,13 @@ int length = Convert.ToInt32(Console.ReadLine());
 // findEven(length);
 
 // Task 2
+// arr123();
+
+// Task 3
 // findSum(length);
 
-//Task 3
-minAndMax(length);
+//Task 4
+//minAndMax(length);
+
+// Task 5
+pairs(length);
